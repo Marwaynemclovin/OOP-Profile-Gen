@@ -1,0 +1,26 @@
+{
+    "name": "OOP Team Profile Generator",
+    "version": "1.0.0",
+    "description": "Node Js applicaiton which generators employees information on a HTML page",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Marwaynemclovin/OOP-Profile-Gen"
+    },
+    "keywords": [
+        "node.js",
+        "generator"
+    ],
+    "author": "",
+    "license": "ISC",
+    "homepage": "",
+    "dependencies": {
+        "inquirer": "^8.2.4"
+    },
+    "devDependencies": {
+        "jest": "^29.4.1"
+    }
+}
