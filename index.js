@@ -33,7 +33,7 @@ function appStart () {
                     addIntern();
                     break;
                 default:
-                    createHTML();
+                    generateHTML();
             }
         });
     }
@@ -125,44 +125,15 @@ function appStart () {
         ]).then(answers => {
             const intern = new Intern(answers.internName, answers.internID, answers.internEmail, answers.internSchool);
             teamArray.push(intern);
-            createTeam();
+            teamStart();
         });
     }
     
-    function createHTML (){
-        if (!fs.existsSync(DIST_DIR)) {
-            fs.mkdirSync(DIST_DIR)
-        }
-        console.log('Creating Team HTML');
+    function generateHTML (){
+        console.log('Team Creating!');
         fs.writeFileSync(outputPath, render(teamArray), 'utf-8');
     }
-    
-    createTeam ();
-    
-    function appStart () {
-        inquirer.prompt([
-            {
-                type: 'list',
-                name: 'addMember',
-                message: 'What type of team member would you like to add?',
-                choices: ['Manager', 'Engineer', 'Intern', 'No more members to add']
-            },
-        ]).then(answers => {
-            switch(answers.addMember) {
-                case 'Manager':
-                    addManager();
-                    break;
-                case 'Engineer':
-                    addEngineer();
-                    break;
-                case 'Intern':
-                    addIntern();
-                    break;
-                default:
-                    createHTML();
-                    break;
-            }
-        });
-    }
+
+    teamStart();
 }
     appStart();
