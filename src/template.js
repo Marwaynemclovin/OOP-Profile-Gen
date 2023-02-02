@@ -104,5 +104,4 @@ const gernerateTeam = team => {
 
     return html.join("");
 
-    }
-
+};
